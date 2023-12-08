@@ -16,6 +16,10 @@ export default {
 
   addUser: Meteor.bindEnvironment(function (user) {
     const id = Users.insert(user);
-    return id;
+    if (id) {
+      return { name: user.name, email: user.email };
+    }
+
+    return null;
   }),
 };

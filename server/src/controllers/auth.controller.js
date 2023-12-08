@@ -26,7 +26,44 @@ export default {
         data: { message: 'Incorrect email or password.' }
       });
     }
-  }
+  },
+
+  signup: function (req, res, next) {
+    try {
+      const { email, password, name } = req.body;
+      const existingUser = userService.getUserByEmail(email);
+      if (existingUser) {
+        throw new Error(`User with email ${email} already exists.`);
+      }
+      const user = createUser({ email, password, name });
+      const tokens = generateTokens(user);
+      JsonRoutes.sendResult(res, {
+        data: { user, ...tokens }
+      });
+    } catch (error) {
+      JsonRoutes.sendResult(res, {
+        code: 400,
+        data: { message: error.message }
+      });
+    }
+  },
+
+  refreshToken: function (req, res, next) {
+    try {
+      const { refreshToken } = req.body;
+      const decoded = jwt.verify(refreshToken, process.env.JWT_SECRET);
+      const user = decoded.user;
+      const tokens = generateTokens(user);
+      JsonRoutes.sendResult(res, {
+        data: { user, ...tokens }
+      });
+    } catch (error) {
+      JsonRoutes.sendResult(res, {
+        code: 401,
+        data: { message: error.message }
+      });
+    }
+  },
 };
 
 const verifyUser = (email, password) => {
