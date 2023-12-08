@@ -2,7 +2,7 @@
 
 export $(grep -v '^#' .env | xargs)
 
-echo "Running Meteor with environment variables"
-echo
+
+echo -e "\n\e[32mRunning Meteor with environment variables\e[0m (.env file)\n"
 
 meteor.bat run
