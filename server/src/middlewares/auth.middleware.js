@@ -4,7 +4,7 @@ import { JsonRoutes } from 'meteor/simple:json-routes';
 
 export default function addAuthMiddleware() {
   JsonRoutes.Middleware.use(function (req, res, next) {
-    const authRoutes = ['/auth/login', '/auth/signup', 'auth/refresh'];
+    const authRoutes = ['/auth/login', '/auth/signup', '/auth/refresh'];
 
     if (authRoutes.includes(req.url)) {
       next();

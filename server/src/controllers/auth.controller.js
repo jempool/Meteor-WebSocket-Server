@@ -22,7 +22,7 @@ export default {
     } catch (error) {
       console.log(error);
       JsonRoutes.sendResult(res, {
-        code: 401,
+        code: 400,
         data: { message: 'Incorrect email or password.' }
       });
     }
