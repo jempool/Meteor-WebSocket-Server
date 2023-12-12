@@ -1,19 +1,14 @@
-import { Meteor } from 'meteor/meteor';
-import { Users } from '../Models/user.model';
-
+import { Meteor } from "meteor/meteor";
+import { Users } from "../Models/user.model";
+import { User } from "../interfaces/user.interface";
 
 export default {
-  getAllUsers: function () {
-    const users = Users.find().fetch();
-    return users.map(({ message, handle }) => ({ message, handle }));
-  },
-
-  getUserByEmail: function (email) {
-    const user = Users.findOne({ email: email });
+  getUserByEmail: function (email: string): User | null {
+    const user: User = Users.findOne({ email: email }) as User;
     return user ? user : null;
   },
 
-  addUser: Meteor.bindEnvironment(function (user) {
+  addUser: Meteor.bindEnvironment(function (user: User): User | null {
     const id = Users.insert(user);
     if (id) {
       return { name: user.name, email: user.email };
