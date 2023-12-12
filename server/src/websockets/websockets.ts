@@ -1,9 +1,11 @@
-import { WebApp } from 'meteor/webapp';
-import { Server } from 'socket.io';
+import { WebApp } from "meteor/webapp";
+import { Server } from "socket.io";
 
-import { WEBSOCKETS_CHAT_EVENT, WEBSOCKETS_TYPING_EVENT } from '../utils/constants.js';
-import messageService from '../services/message.service.js';
-
+import {
+  WEBSOCKETS_CHAT_EVENT,
+  WEBSOCKETS_TYPING_EVENT,
+} from "../utils/constants";
+import messageService from "../services/message.service";
 
 export default function startWebSocketServer() {
   const httpServer = WebApp.httpServer;

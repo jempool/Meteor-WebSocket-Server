@@ -1,7 +1,7 @@
-import { Mongo } from 'meteor/mongo';
-import SimpleSchema from 'simpl-schema';
+import { Mongo } from "meteor/mongo";
+import SimpleSchema from "simpl-schema";
 
-export const Users = new Mongo.Collection('users');
+export const Users = new Mongo.Collection("users");
 
 const UserSchema = new SimpleSchema({
   name: {
