@@ -15,11 +15,17 @@
     "meteor-node-stubs": "^1.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "socket.io": "^4.7.2"
+    "simpl-schema": "^3.4.1",
+    "socket.io": "^4.7.2",
+    "tslib": "^2.6.2"
   },
-  "meteor": {
-    "mainModule": {
-      "server": "server/main.js"
-    }
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/meteor": "^1.4.87",
+    "@types/node": "^20.10.4",
+    "@types/simpl-schema": "^1.12.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }

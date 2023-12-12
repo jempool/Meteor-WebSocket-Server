@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    "lib": ["dom", "es2015"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es5",
+    "skipLibCheck": true,
+    "stripInternal": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "strictNullChecks": false,
+    "types": ["@types/meteor", "@types/node", "@types/simpl-schema"]
+  },
+  "include": [
+    "imports/**/*.ts",
+    "server/**/*.ts",
+    "server/src/Models/message.model.ts",
+    "server/src/Models/user.model.ts",
+    "server/src/middlewares/auth.middleware.ts"
+  ],
+  "exclude": ["node_modules"],
+  "compileOnSave": false,
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}
