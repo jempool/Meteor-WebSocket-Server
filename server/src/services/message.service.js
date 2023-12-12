@@ -1,7 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-import { Mongo } from 'meteor/mongo';
+import { Messages } from '../Models/message.model';
 
-const Messages = new Mongo.Collection('messages');
 
 export default {
   getAllMessages: function () {

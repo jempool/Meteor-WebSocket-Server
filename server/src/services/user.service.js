@@ -1,7 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-import { Mongo } from 'meteor/mongo';
+import { Users } from '../Models/user.model';
 
-const Users = new Mongo.Collection('users');
 
 export default {
   getAllUsers: function () {

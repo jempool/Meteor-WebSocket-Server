@@ -35,7 +35,7 @@ export default {
       if (existingUser) {
         throw new Error(`User with email ${email} already exists.`);
       }
-      const user = createUser({ email, password, name });
+      const user = createUser({ email, name, password });
       const tokens = generateTokens(user);
       JsonRoutes.sendResult(res, {
         data: { user, ...tokens }
