@@ -4,6 +4,7 @@ import addAuthMiddleware from "./src/middlewares/auth.middleware";
 import addConfigMiddleware from "./src/middlewares/config.middleware";
 import addMessageRoutes from "./src/routes/messages.routes";
 import addAuthRoutes from "./src/routes/auth.routes";
+import addTopicsRoutes from "./src/routes/topics.routes";
 import startWebSocketServer from "./src/websockets/websockets";
 
 Meteor.startup(async () => {
@@ -14,6 +15,7 @@ Meteor.startup(async () => {
   // Routes
   addMessageRoutes();
   addAuthRoutes();
+  addTopicsRoutes();
 
   // Websockets
   startWebSocketServer();
