@@ -1,4 +1,3 @@
-import { WebApp } from "meteor/webapp";
 import { Server } from "socket.io";
 
 import {
@@ -8,9 +7,7 @@ import {
 import messageService from "../services/message.service";
 import { Message } from "../interfaces/message.interface";
 
-export default function startWebSocketServer() {
-  const httpServer = WebApp.httpServer;
-
+export default function startWebSocketServer(httpServer) {
   const io = new Server(httpServer, {
     cors: {
       origin: "*",

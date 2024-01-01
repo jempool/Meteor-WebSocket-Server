@@ -1,4 +1,5 @@
 import { Meteor } from "meteor/meteor";
+import { WebApp } from "meteor/webapp";
 
 import addAuthMiddleware from "./src/middlewares/auth.middleware";
 import addConfigMiddleware from "./src/middlewares/config.middleware";
@@ -18,5 +19,6 @@ Meteor.startup(async () => {
   addTopicsRoutes();
 
   // Websockets
-  startWebSocketServer();
+  const httpServer = WebApp.httpServer;
+  startWebSocketServer(httpServer);
 });
