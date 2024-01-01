@@ -22,3 +22,4 @@ hot-module-replacement@0.5.3  # Update client in development without reloading t
 # react-meteor-data       # React higher-order component for reactively tracking Meteor data
 simple:json-routes
 aldeed:collection2
+meteortesting:mocha
